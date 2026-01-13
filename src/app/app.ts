@@ -1,12 +1,22 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [RouterOutlet, RouterLink],
 })
 export class App {
-  protected readonly title = signal('contador-angular');
+  title = 'Contador con Signals';
+
+  counter = signal(10);
+
+  variation(value: number) {
+    this.counter.update(v => v + value);
+  }
+
+  reset() {
+    this.counter.set(10);
+  }
 }
