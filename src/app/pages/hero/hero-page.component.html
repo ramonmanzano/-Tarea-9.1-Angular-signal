@@ -1,26 +1,27 @@
-<div class="container mt-4">
-  <h1 class="mb-3">Hero</h1>
+<h1>{{ name() }}</h1>
 
-  <dl class="row">
-    <dt class="col-sm-3">Name:</dt>
-    <dd class="col-sm-9">{{ nameUpper() }}</dd>
+<dl>
+  <dt>Nombre:</dt>
+  <dd>{{ name() }}</dd>
 
-    <dt class="col-sm-3">Age:</dt>
-    <dd class="col-sm-9">{{ age() }}</dd>
+  <dt>Edad:</dt>
+  <dd>{{ age() }}</dd>
 
-    <dt class="col-sm-3">Description:</dt>
-    <dd class="col-sm-9">{{ getHeroDescription() }}</dd>
-  </dl>
+  <dt>Método:</dt>
+  <dd>{{ getHeroDescription() }}</dd>
 
-  <button class="btn btn-primary me-2" (click)="changeHero()">
-    Change Hero
-  </button>
+  <dt>Capitalizado:</dt>
+  <dd>{{ nameUpper() }}</dd>
+</dl>
 
-  <button class="btn btn-warning me-2" (click)="changeAge()">
-    Change Age
-  </button>
+<button (click)="changeHero()" class="btn btn-primary mx-2">
+  Cambiar nombre
+</button>
 
-  <button class="btn btn-danger" (click)="resetForm()">
-    Reset
-  </button>
-</div>
+<button (click)="changeAge()" class="btn btn-primary">
+  Cambiar edad
+</button>
+
+<button (click)="resetForm()" class="btn btn-primary mx-2">
+  Reset
+</button>
